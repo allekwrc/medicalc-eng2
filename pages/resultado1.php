@@ -1,3 +1,14 @@
+<?php
+
+$calcio = $_POST["calcio"];
+$albumina = $_POST["albumina"];
+
+
+$result = $calcio + (0.8*(4.0 - $albumina));
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,28 +75,28 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                            <a href="index.html"><i class="fa fa-home fa-fw"></i> Home</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Endocrinologia<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-medkit fa-fw"></i> Endocrinologia<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Cálcio<span class="fa arrow"></span></a>
+                                    <a href="#"><i class="fa fa-check fa-fw"></i> Cálcio<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="calcio_correcao.html"><i class="fa fa-flask fa-fw"></i> Correção de Cálcio</a>
                                         </li>
                                         <li>
-                                            <a href="exame2.html"><i class="fa fa-flask fa-fw"></i> Exame 2</a>
+                                            <a href="albumina_correcao.html"><i class="fa fa-flask fa-fw"></i> Correção de Albumina</a>
                                         </li>
                                         <li>
-                                            <a href="exame3.html"><i class="fa fa-flask fa-fw"></i> Exame 3</a>
+                                            <a href="globulina_correcao.html"><i class="fa fa-flask fa-fw"></i> Correção de Globulina</a>
                                         </li>
                                         <li>
-                                            <a href="exame4.html"><i class="fa fa-flask fa-fw"></i> Exame 4</a>
+                                            <a href="ph_correcao.html"><i class="fa fa-flask fa-fw"></i> Correção de pH</a>
                                         </li>
                                         <li>
-                                            <a href="exame5.html"><i class="fa fa-flask fa-fw"></i> Exame 5</a>
+                                            <a href="proteina_limite.html"><i class="fa fa-flask fa-fw"></i> Limites de Proteína</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -103,7 +114,90 @@
                 </div>
             </div>
 
-            Texto de Introdução.
+          <ul class="list-group list-group-flush">
+                <br><br>
+                <h5>INFORMAÇÕES DE RISCO DE TIMI</h5>
+                <li class="list-group-item list-group-item-secondary text-center text-secondary">INFORMAÇÕES DO PACIENTE</li>
+                <li class="list-group-item">
+                    <div>Idade do paciênte</div>
+                    <div><?php echo $age; ?></div>
+                </li>
+
+                <li class="list-group-item list-group-item-secondary text-center text-secondary">INFORMAÇÕES MÉDICAS DO PACIENTE</li>
+
+                <li class="list-group-item">
+                    <div>Frequência Cardíaca</div>
+                    <div><?php echo $hr; ?></div>
+                </li>
+
+                <li class="list-group-item">
+                    <div>Pressão Arterial Sistólica</div>
+                    <div><?php echo $sbp; ?></div>
+                </li>
+
+                <?php
+
+                if($result < 4){
+                    $classresult = 'text-danger font-weight-bold';
+                } elseif($result > 5 && $result <= 28){
+                    $classresult = 'text-success font-weight-bold';
+                }
+                elseif($result > 28){
+                    $classresult = 'text-warning font-weight-bold';
+                }
+
+                ?>
+
+                <li class="list-group-item <?php echo $classresult; ?>">
+                    <div>RESULTADO FINAL</div>
+                    <div><?php echo $result; ?></div>
+                </li>
+
+
+                <br><br>
+                <h5>TABELA PARA COMPARAÇÃO</h5>
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Parâmetro</th>
+                        <th scope="col">Normal baixo</th>
+                        <th scope="col">Normal alto</th>
+                        <th scope="col">Limite inferior</th>
+                        <th scope="col">Limite superior</th>
+                        <th scope="col">Unidades C</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">IDADE</th>
+                        <td>0</td>
+                        <td>90</td>
+                        <td>0</td>
+                        <td>110</td>
+                        <td>anos</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">FREQUÊNCIA CARDÍACA</th>
+                        <td>60</td>
+                        <td>90</td>
+                        <td>0</td>
+                        <td>500</td>
+                        <td>bpm</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pressão arterial sistólica</th>
+                        <td>100</td>
+                        <td>140</td>
+                        <td>0</td>
+                        <td>300</td>
+                        <td>mmHg</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <a href="index.html" class="btn btn-success">VOLTAR PARA PÁGINA INICIAL</a>
+
+            </ul>
 
         </div>
 
