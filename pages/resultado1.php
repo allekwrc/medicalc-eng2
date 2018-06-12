@@ -3,10 +3,15 @@
 $calcio = $_POST["calcio"];
 $albumina = $_POST["albumina"];
 
+<<<<<<< HEAD
     if ($albumina > 4)
         $resultado = $calcio;
     else
         $resultado = $calcio + (0.8*(4.0 - $albumina));
+=======
+
+$result = $calcio + (0.8*(4.0 - $albumina));
+>>>>>>> 95d74e10cb920be3ea12533d5b3d6baf0e8ac664
 
 ?>
 
@@ -83,7 +88,11 @@ $albumina = $_POST["albumina"];
                             <a href="#"><i class="fa fa-medkit fa-fw"></i> Endocrinologia<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
+<<<<<<< HEAD
                                     <a href="#"><i class="fa fa-eyedropper fa-fw"></i> Cálcio<span class="fa arrow"></span></a>
+=======
+                                    <a href="#"><i class="fa fa-check fa-fw"></i> Cálcio<span class="fa arrow"></span></a>
+>>>>>>> 95d74e10cb920be3ea12533d5b3d6baf0e8ac664
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="calcio_correcao.html"><i class="fa fa-flask fa-fw"></i> Correção de Cálcio</a>
@@ -112,12 +121,17 @@ $albumina = $_POST["albumina"];
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
+<<<<<<< HEAD
                     <h1 style = "text-align:center" class="page-header">Resultado do Cálculo de Correção de Cálcio</h1>
+=======
+                    <h1 class="page-header">Home</h1>
+>>>>>>> 95d74e10cb920be3ea12533d5b3d6baf0e8ac664
                 </div>
             </div>
 
           <ul class="list-group list-group-flush">
                 <br><br>
+<<<<<<< HEAD
                 
                 <li class="list-group-item list-group-item-secondary text-center text-secondary" style = "font-weight:bolder; background-color:#efefef">DADOS DO CÁLCULO</li>
                 
@@ -138,10 +152,48 @@ $albumina = $_POST["albumina"];
                                         
                     <br>
                     <div style = "font-weight:bolder">RESULTADO: <spam class="<?php echo $classresult; ?>"><?php echo $resultado; ?> mg/dL</spam></div>
+=======
+                <h5>INFORMAÇÕES DE RISCO DE TIMI</h5>
+                <li class="list-group-item list-group-item-secondary text-center text-secondary">INFORMAÇÕES DO PACIENTE</li>
+                <li class="list-group-item">
+                    <div>Idade do paciênte</div>
+                    <div><?php echo $age; ?></div>
+                </li>
+
+                <li class="list-group-item list-group-item-secondary text-center text-secondary">INFORMAÇÕES MÉDICAS DO PACIENTE</li>
+
+                <li class="list-group-item">
+                    <div>Frequência Cardíaca</div>
+                    <div><?php echo $hr; ?></div>
+                </li>
+
+                <li class="list-group-item">
+                    <div>Pressão Arterial Sistólica</div>
+                    <div><?php echo $sbp; ?></div>
+                </li>
+
+                <?php
+
+                if($result < 4){
+                    $classresult = 'text-danger font-weight-bold';
+                } elseif($result > 5 && $result <= 28){
+                    $classresult = 'text-success font-weight-bold';
+                }
+                elseif($result > 28){
+                    $classresult = 'text-warning font-weight-bold';
+                }
+
+                ?>
+
+                <li class="list-group-item <?php echo $classresult; ?>">
+                    <div>RESULTADO FINAL</div>
+                    <div><?php echo $result; ?></div>
+>>>>>>> 95d74e10cb920be3ea12533d5b3d6baf0e8ac664
                 </li>
 
 
                 <br><br>
+<<<<<<< HEAD
               
                 <li class="list-group-item list-group-item-secondary text-center text-secondary" style = "font-weight:bolder; background-color:#efefef">TABELA PARA COMPARAÇÃO</li>
 
@@ -226,6 +278,54 @@ $albumina = $_POST["albumina"];
               <br>
             </ul>
         </div>
+=======
+                <h5>TABELA PARA COMPARAÇÃO</h5>
+                <table class="table table-hover">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Parâmetro</th>
+                        <th scope="col">Normal baixo</th>
+                        <th scope="col">Normal alto</th>
+                        <th scope="col">Limite inferior</th>
+                        <th scope="col">Limite superior</th>
+                        <th scope="col">Unidades C</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">IDADE</th>
+                        <td>0</td>
+                        <td>90</td>
+                        <td>0</td>
+                        <td>110</td>
+                        <td>anos</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">FREQUÊNCIA CARDÍACA</th>
+                        <td>60</td>
+                        <td>90</td>
+                        <td>0</td>
+                        <td>500</td>
+                        <td>bpm</td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pressão arterial sistólica</th>
+                        <td>100</td>
+                        <td>140</td>
+                        <td>0</td>
+                        <td>300</td>
+                        <td>mmHg</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                <a href="index.html" class="btn btn-success">VOLTAR PARA PÁGINA INICIAL</a>
+
+            </ul>
+
+        </div>
+
+>>>>>>> 95d74e10cb920be3ea12533d5b3d6baf0e8ac664
     </div>
 
 
