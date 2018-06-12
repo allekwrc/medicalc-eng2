@@ -1,12 +1,12 @@
 <?php
 
 $calcio = $_POST["calcio"];
-$albumina = $_POST["albumina"];
+$ph = $_POST["pH"];
 
-    if ($albumina > 4)
+    if (ph < 7.4)
         $resultado = $calcio;
     else
-        $resultado = $calcio + (1*(4.0 - $albumina));
+        $resultado =  $calcio+(0.12*(($ph-7.4)/0.1));
 
 ?>
 
@@ -118,9 +118,9 @@ $albumina = $_POST["albumina"];
 
           <ul class="list-group list-group-flush">
                 <br><br>
-                
+
                 <li class="list-group-item list-group-item-secondary text-center text-secondary" style = "font-weight:bolder; background-color:#efefef">DADOS DO CÁLCULO</li>
-                
+
                <?php
 
                 if($resultado < 8.5 || $resultado > 10.5){
@@ -128,24 +128,24 @@ $albumina = $_POST["albumina"];
                 } elseif($resultado >= 8.5 && $resultado <= 10.5){
                     $classresult = 'text-success font-weight-bold';
                 }
-                
+
 
                 ?>
-                
+
                 <li class="list-group-item" style="background-color:#dae8fc;">
                     <div style = "font-weight:bolder">Valor do Cálcio: <spam style = "font-weight:normal"><?php echo $calcio; ?> mg/dL</spam></div><br>
                     <div style = "font-weight:bolder">Valor da Albumina: <spam style = "font-weight:normal"><?php echo $albumina; ?> g/dL</spam></div>
-                                        
+
                     <br>
                     <div style = "font-weight:bolder">RESULTADO: <spam class="<?php echo $classresult; ?>"><?php echo $resultado; ?> mg/dL</spam></div>
                 </li>
 
 
                 <br><br>
-              
+
                 <li class="list-group-item list-group-item-secondary text-center text-secondary" style = "font-weight:bolder; background-color:#efefef">TABELA PARA COMPARAÇÃO</li>
 
-              
+
                 <style type="text/css" >
                     .tg  {border-collapse:collapse;border-spacing:0;}
                     .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
@@ -219,7 +219,7 @@ $albumina = $_POST["albumina"];
                   </table></center>
                   <div><br>
                     Sobre os Parâmetros: Valores normais (e limites) são expressos em Unidades (C). Spcmn = amostra.
-                    CF = fator de conversão. 
+                    CF = fator de conversão.
                     <br>Unidades (C) x CF = Unidades (SI) (a menos que especificado de outra forma).
                   </div>
               </li>
