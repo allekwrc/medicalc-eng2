@@ -89,6 +89,17 @@ body {
 .sidebar .active > a > .fa.arrow:before {
   content: "\f107";
 }
+
+.sidebar .flask {
+  float: right;
+}
+.sidebar .fa.flask:before {
+  content: "\f0c3";
+}
+.sidebar .active > a > .fa.flask:before {
+  content: "\f0c3";
+}
+
 .sidebar .nav-second-level li,
 .sidebar .nav-third-level li {
   border-bottom: none !important;
