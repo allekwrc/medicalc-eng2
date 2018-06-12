@@ -132,12 +132,14 @@ $albumina = $_POST["albumina"];
 
                 ?>
                 
-                <li class="list-group-item" style="background-color:#dae8fc;">
+                <li class="list-group-item" style="background-color:#dae8fc">
                     <div style = "font-weight:bolder">Valor do Cálcio: <spam style = "font-weight:normal"><?php echo $calcio; ?> mg/dL</spam></div><br>
                     <div style = "font-weight:bolder">Valor da Albumina: <spam style = "font-weight:normal"><?php echo $albumina; ?> g/dL</spam></div>
                                         
                     <br>
                     <div style = "font-weight:bolder">RESULTADO: <spam class="<?php echo $classresult; ?>"><?php echo $resultado; ?> mg/dL</spam></div>
+                    <br><br>
+                    <spam style="font-size:10px">Cores: <br><spam style="color:green; font-weight:bolder ">VERDE</spam> = valores normais.<br><spam style="color:red; font-weight:bolder">VERMELHO</spam> = valores anormais.</spam>
                 </li>
 
 
@@ -190,7 +192,7 @@ $albumina = $_POST["albumina"];
                       <td class="tg-ey81">mmol/L<br></td>
                    </tr>
                    <tr>
-                      <td class="tg-us36"><span style="font-weight:bold">Aluminia</span></td>
+                      <td class="tg-us36"><span style="font-weight:bold">Albumina</span></td>
                       <td class="tg-ey81">Alb</td>
                       <td class="tg-us36">S<br></td>
                       <td class="tg-ey81">3.5</td>

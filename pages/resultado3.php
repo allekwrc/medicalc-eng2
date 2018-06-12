@@ -1,3 +1,16 @@
+<?php
+
+$calcio = $_POST["calcio"];
+$globulina = $_POST["globulina"];
+
+    if ($globulina < 3.5)
+        $resultado = $calcio;
+    else
+        $resultado = $calcio + (0.16*($globulina - 3.5));
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,28 +77,28 @@
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li>
-                            <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Home</a>
+                            <a href="index.html"><i class="fa fa-home fa-fw"></i> Home</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Endocrinologia<span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-medkit fa-fw"></i> Endocrinologia<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Cálcio<span class="fa arrow"></span></a>
+                                    <a href="#"><i class="fa fa-eyedropper fa-fw"></i> Cálcio<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="calcio_correcao.html"><i class="fa fa-flask fa-fw"></i> Correção de Cálcio</a>
                                         </li>
                                         <li>
-                                            <a href="exame2.html"><i class="fa fa-flask fa-fw"></i> Exame 2</a>
+                                            <a href="albumina_correcao.html"><i class="fa fa-flask fa-fw"></i> Correção de Albumina</a>
                                         </li>
                                         <li>
-                                            <a href="exame3.html"><i class="fa fa-flask fa-fw"></i> Exame 3</a>
+                                            <a href="globulina_correcao.html"><i class="fa fa-flask fa-fw"></i> Correção de Globulina</a>
                                         </li>
                                         <li>
-                                            <a href="exame4.html"><i class="fa fa-flask fa-fw"></i> Exame 4</a>
+                                            <a href="ph_correcao.html"><i class="fa fa-flask fa-fw"></i> Correção de pH</a>
                                         </li>
                                         <li>
-                                            <a href="exame5.html"><i class="fa fa-flask fa-fw"></i> Exame 5</a>
+                                            <a href="proteina_limite.html"><i class="fa fa-flask fa-fw"></i> Limites de Proteína</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -99,14 +112,120 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Home</h1>
+                    <h1 style = "text-align:center" class="page-header">Resultado do Cálculo de Correção de Cálcio</h1>
                 </div>
             </div>
 
-            Texto de Introdução.
+          <ul class="list-group list-group-flush">
+                <br><br>
+                
+                <li class="list-group-item list-group-item-secondary text-center text-secondary" style = "font-weight:bolder; background-color:#efefef">DADOS DO CÁLCULO</li>
+                
+               <?php
 
+                if($resultado < 8.5 || $resultado > 10.5){
+                    $classresult = 'text-danger font-weight-bold';
+                } elseif($resultado >= 8.5 && $resultado <= 10.5){
+                    $classresult = 'text-success font-weight-bold';
+                }
+                
+
+                ?>
+                
+                <li class="list-group-item" style="background-color:#dae8fc;">
+                    <div style = "font-weight:bolder">Valor do Cálcio: <spam style = "font-weight:normal"><?php echo $calcio; ?> mg/dL</spam></div><br>
+                    <div style = "font-weight:bolder">Valor da Albumina: <spam style = "font-weight:normal"><?php echo $albumina; ?> g/dL</spam></div>
+                                        
+                    <br>
+                    <div style = "font-weight:bolder">RESULTADO: <spam class="<?php echo $classresult; ?>"><?php echo $resultado; ?> mg/dL</spam></div>
+                </li>
+
+
+                <br><br>
+              
+                <li class="list-group-item list-group-item-secondary text-center text-secondary" style = "font-weight:bolder; background-color:#efefef">TABELA PARA COMPARAÇÃO</li>
+
+              
+                <style type="text/css" >
+                    .tg  {border-collapse:collapse;border-spacing:0;}
+                    .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                    .tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
+                    .tg .tg-v0hj{font-weight:bold;background-color:#efefef;border-color:inherit;text-align:center;vertical-align:top}
+                    .tg .tg-4j1h{background-color:#dae8fc;border-color:inherit;vertical-align:top}
+                    .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+                    .tg .tg-us36{border-color:inherit;vertical-align:top}
+                    .tg .tg-3idu{background-color:#dae8fc;border-color:inherit;vertical-align:top}
+                    .tg .tg-ey81{border-color:inherit;vertical-align:top}
+                </style>
+              <li class="list-group-item" style="text-align: center;">
+                  <center><table class="tg" style="text-align: center;">
+                    <tr>
+                        <th class="tg-v0hj" colspan="10">Parâmetros para Equação - Correção de Globulina</th>
+                    </tr>
+                    <tr>
+                        <td class="tg-3idu"><span style="font-weight:bold">Parâmetro</span></td>
+                          <td class="tg-4j1h"><span style="font-weight:bold">Abreviatura</span></td>
+                          <td class="tg-3idu"><span style="font-weight:bold">spcmn</span></td>
+                          <td class="tg-4j1h"><span style="font-weight:bold">Normal Baixo</span><br></td>
+                          <td class="tg-3idu"><span style="font-weight:bold">Normal Alto</span></td>
+                          <td class="tg-4j1h"><span style="font-weight:bold">Limite Baixo</span></td>
+                          <td class="tg-3idu"><span style="font-weight:bold">Limite Alto</span></td>
+                          <td class="tg-4j1h"><span style="font-weight:bold">Unidade C</span><br></td>
+                          <td class="tg-3idu"><span style="font-weight:bold">CF</span><br></td>
+                          <td class="tg-4j1h"><span style="font-weight:bold">SI UNITS</span><br></td>
+                    </tr>
+                    <tr>
+                        <td class="tg-c3ow" colspan="10"><span style="font-weight:bold">Entrada</span></td>
+                    </tr>
+                    <tr>
+                      <td class="tg-us36"><span style="font-weight:bold">Cálcio</span></td>
+                      <td class="tg-ey81">Ca++<br></td>
+                      <td class="tg-us36">S</td>
+                      <td class="tg-ey81">8.5</td>
+                      <td class="tg-us36">10.5</td>
+                      <td class="tg-ey81">0</td>
+                      <td class="tg-us36">20</td>
+                      <td class="tg-ey81">mg/dL<br></td>
+                      <td class="tg-us36">0.2495</td>
+                      <td class="tg-ey81">mmol/L<br></td>
+                   </tr>
+                   <tr>
+                      <td class="tg-us36"><span style="font-weight:bold">Globulina</span></td>
+                      <td class="tg-ey81">Glob</td>
+                      <td class="tg-us36">S<br></td>
+                      <td class="tg-ey81">2</td>
+                      <td class="tg-us36">3.5</td>
+                      <td class="tg-ey81">0</td>
+                      <td class="tg-us36">50</td>
+                      <td class="tg-ey81">g/dL<br></td>
+                      <td class="tg-us36">10</td>
+                      <td class="tg-ey81">g/L<br></td>
+                   </tr>
+                   <tr>
+                      <td class="tg-c3ow" colspan="10"><span style="font-weight:bold">Saída</span></td>
+                   </tr>
+                   <tr>
+                      <td class="tg-us36"><span style="font-weight:bold">Correção de Globulina</span></td>
+                      <td class="tg-ey81">CaGlob_c<br></td>
+                      <td class="tg-us36">S</td>
+                      <td class="tg-ey81">8.5</td>
+                      <td class="tg-us36">10.5</td>
+                      <td class="tg-ey81">0</td>
+                      <td class="tg-us36">20</td>
+                      <td class="tg-ey81">mg/dL<br></td>
+                      <td class="tg-us36">0.2495</td>
+                      <td class="tg-ey81">mmol/L<br></td>
+                   </tr>
+                  </table></center>
+                  <div><br>
+                    Sobre os Parâmetros: Valores normais (e limites) são expressos em Unidades (C). Spcmn = amostra.
+                    CF = fator de conversão. 
+                    <br>Unidades (C) x CF = Unidades (SI) (a menos que especificado de outra forma).
+                  </div>
+              </li>
+              <br>
+            </ul>
         </div>
-
     </div>
 
 
