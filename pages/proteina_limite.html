@@ -70,7 +70,7 @@
                             <a href="#"><i class="fa fa-medkit fa-fw"></i> Endocrinologia<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="#"><i class="fa fa-check fa-fw"></i> Cálcio<span class="fa arrow"></span></a>
+                                    <a href="#"><i class="fa fa-eyedropper fa-fw"></i> Cálcio<span class="fa arrow"></span></a>
                                     <ul class="nav nav-third-level">
                                         <li>
                                             <a href="calcio_correcao.html"><i class="fa fa-flask fa-fw"></i> Correção de Cálcio</a>
@@ -102,8 +102,28 @@
                     <h1 class="page-header">Limites de Proteína</h1>
                 </div>
             </div>
+            
+            <div class="col-lg-3"></div>
+            
+            <div class="col-lg-6">
 
-            Limites de Proteína.
+             <div class="card-body">
+                <h3 class="card-title">Calcular limites de proteína</h3>
+                <p class="card-text">
+                <form action="resultado5.php" method="post">
+                    <div class="form-group">
+                        <label for="calcio">Albumina(S)</label>
+                        <input type="text" placeholder="g/dL" name="calcio" id="calcio" class="form-control" required><br>
+                        
+                        <label for="hr">Globulina(S)</label>
+                        <input type="text" placeholder="g/dL" name="hr" id="hr" class="form-control" required>
+                        <br>
+                        <button class="btn btn-primary">Calcular</button>
+                  </div>
+                </form>
+
+              </p>
+          </div>
 
         </div>
 
