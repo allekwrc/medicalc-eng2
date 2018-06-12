@@ -3,10 +3,10 @@
 $calcio = $_POST["calcio"];
 $ph = $_POST["ph"];
 
-    if (ph < 7.4)
+    if ($ph < 7.4)
         $resultado = $calcio;
     else
-        $resultado =  $calcio+(0.12*(($ph-7.4)/0.1));
+        $resultado =  $calcio+( 0.12*( ($ph-7.4)/0.1 ) );
 
 ?>
 
@@ -134,7 +134,7 @@ $ph = $_POST["ph"];
 
                 <li class="list-group-item" style="background-color:#dae8fc;">
                     <div style = "font-weight:bolder">Valor do Cálcio: <spam style = "font-weight:normal"><?php echo $calcio; ?> mg/dL</spam></div><br>
-                    <div style = "font-weight:bolder">Valor da Albumina: <spam style = "font-weight:normal"><?php echo $albumina; ?> g/dL</spam></div>
+                    <div style = "font-weight:bolder">Valor da ph: <spam style = "font-weight:normal"><?php echo $ph; ?> pH untis</spam></div>
 
                     <br>
                     <div style = "font-weight:bolder">RESULTADO: <spam class="<?php echo $classresult; ?>"><?php echo $resultado; ?> mg/dL</spam></div>
