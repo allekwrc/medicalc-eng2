@@ -1,7 +1,7 @@
 <?php
 
 $calcio = $_POST["calcio"];
-$ph = $_POST["pH"];
+$ph = $_POST["ph"];
 
     if (ph < 7.4)
         $resultado = $calcio;
