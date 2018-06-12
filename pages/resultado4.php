@@ -1,7 +1,7 @@
 <?php
 
 $calcio = $_POST["calcio"];
-$ph = $_POST["ph"];
+$ph     = $_POST["ph"];
 
     if ($ph < 7.4)
         $resultado = $calcio;
@@ -9,7 +9,6 @@ $ph = $_POST["ph"];
         $resultado =  $calcio+( 0.12*( ($ph-7.4)/0.1 ) );
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -112,7 +111,7 @@ $ph = $_POST["ph"];
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 style = "text-align:center" class="page-header">Resultado do Cálculo de Correção de Cálcio</h1>
+                    <h1 style = "text-align:center" class="page-header">Resultado do Cálculo de Correção de pH</h1>
                 </div>
             </div>
 
@@ -125,6 +124,7 @@ $ph = $_POST["ph"];
 
                 if($resultado < 8.5 || $resultado > 10.5){
                     $classresult = 'text-danger font-weight-bold';
+
                 } elseif($resultado >= 8.5 && $resultado <= 10.5){
                     $classresult = 'text-success font-weight-bold';
                 }
@@ -190,23 +190,23 @@ $ph = $_POST["ph"];
                       <td class="tg-ey81">mmol/L<br></td>
                    </tr>
                    <tr>
-                      <td class="tg-us36"><span style="font-weight:bold">Albumina</span></td>
-                      <td class="tg-ey81">Alb</td>
-                      <td class="tg-us36">S<br></td>
-                      <td class="tg-ey81">3.5</td>
-                      <td class="tg-us36">5.5</td>
+                      <td class="tg-us36"><span style="font-weight:bold">pH</span></td>
+                      <td class="tg-ey81"></td>
+                      <td class="tg-us36">B<br></td>
+                      <td class="tg-ey81">7.36</td>
+                      <td class="tg-us36">7.44</td>
                       <td class="tg-ey81">0</td>
-                      <td class="tg-us36">50</td>
-                      <td class="tg-ey81">g/dL<br></td>
-                      <td class="tg-us36">10</td>
-                      <td class="tg-ey81">g/L<br></td>
+                      <td class="tg-us36">20</td>
+                      <td class="tg-ey81">pH unidade<br></td>
+                      <td class="tg-us36"></td>
+                      <td class="tg-ey81"><br></td>
                    </tr>
                    <tr>
                       <td class="tg-c3ow" colspan="10"><span style="font-weight:bold">Saída</span></td>
                    </tr>
                    <tr>
-                      <td class="tg-us36"><span style="font-weight:bold">Correção do Cálcio</span></td>
-                      <td class="tg-ey81">Ca++_c<br></td>
+                      <td class="tg-us36"><span style="font-weight:bold">Cálcio - Correção do pH</span></td>
+                      <td class="tg-ey81">CapH_c<br></td>
                       <td class="tg-us36">S</td>
                       <td class="tg-ey81">8.5</td>
                       <td class="tg-us36">10.5</td>

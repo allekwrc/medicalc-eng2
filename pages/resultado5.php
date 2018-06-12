@@ -1,13 +1,9 @@
 <?php
 
-$calcio = $_POST["calcio"];
-$albumina = $_POST["albumina"];
+$albumin = $_POST["albumina"];
+$globulina = $_POST["globulina"];
 
-    if ($albumina > 4)
-        $resultado = $calcio;
-    else
-        $resultado = $calcio + (1*(4.0 - $albumina));
-
+        $resultado = ($albumin*8) + ($globulina*2) +3 ;
 ?>
 
 
@@ -112,40 +108,40 @@ $albumina = $_POST["albumina"];
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 style = "text-align:center" class="page-header">Resultado do Cálculo de Correção de Cálcio</h1>
+                    <h1 style = "text-align:center" class="page-header">Resultado do Cálculo de Proteína Limite</h1>
                 </div>
             </div>
 
           <ul class="list-group list-group-flush">
                 <br><br>
-                
+
                 <li class="list-group-item list-group-item-secondary text-center text-secondary" style = "font-weight:bolder; background-color:#efefef">DADOS DO CÁLCULO</li>
-                
+
                <?php
 
-                if($resultado < 8.5 || $resultado > 10.5){
+                if($resultado < 50 || $resultado > 54){
                     $classresult = 'text-danger font-weight-bold';
-                } elseif($resultado >= 8.5 && $resultado <= 10.5){
+                } elseif($resultado >= 51 && $resultado <= 54){
                     $classresult = 'text-success font-weight-bold';
                 }
-                
+
 
                 ?>
-                
+
                 <li class="list-group-item" style="background-color:#dae8fc;">
-                    <div style = "font-weight:bolder">Valor do Cálcio: <spam style = "font-weight:normal"><?php echo $calcio; ?> mg/dL</spam></div><br>
-                    <div style = "font-weight:bolder">Valor da Albumina: <spam style = "font-weight:normal"><?php echo $albumina; ?> g/dL</spam></div>
-                                        
+                    <div style = "font-weight:bolder">Valor do Albumina: <spam style = "font-weight:normal"><?php echo $albumin; ?> g/dL</spam></div><br>
+                    <div style = "font-weight:bolder">Valor da Globulina: <spam style = "font-weight:normal"><?php echo $globulina; ?> g/dL</spam></div>
+
                     <br>
                     <div style = "font-weight:bolder">RESULTADO: <spam class="<?php echo $classresult; ?>"><?php echo $resultado; ?> mg/dL</spam></div>
                 </li>
 
 
                 <br><br>
-              
+
                 <li class="list-group-item list-group-item-secondary text-center text-secondary" style = "font-weight:bolder; background-color:#efefef">TABELA PARA COMPARAÇÃO</li>
 
-              
+
                 <style type="text/css" >
                     .tg  {border-collapse:collapse;border-spacing:0;}
                     .tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:black;}
@@ -178,20 +174,8 @@ $albumina = $_POST["albumina"];
                         <td class="tg-c3ow" colspan="10"><span style="font-weight:bold">Entrada</span></td>
                     </tr>
                     <tr>
-                      <td class="tg-us36"><span style="font-weight:bold">Cálcio</span></td>
-                      <td class="tg-ey81">Ca++<br></td>
-                      <td class="tg-us36">S</td>
-                      <td class="tg-ey81">8.5</td>
-                      <td class="tg-us36">10.5</td>
-                      <td class="tg-ey81">0</td>
-                      <td class="tg-us36">20</td>
-                      <td class="tg-ey81">mg/dL<br></td>
-                      <td class="tg-us36">0.2495</td>
-                      <td class="tg-ey81">mmol/L<br></td>
-                   </tr>
-                   <tr>
                       <td class="tg-us36"><span style="font-weight:bold">Albumina</span></td>
-                      <td class="tg-ey81">Alb</td>
+                      <td class="tg-ey81">Alb<br></td>
                       <td class="tg-us36">S<br></td>
                       <td class="tg-ey81">3.5</td>
                       <td class="tg-us36">5.5</td>
@@ -202,24 +186,36 @@ $albumina = $_POST["albumina"];
                       <td class="tg-ey81">g/L<br></td>
                    </tr>
                    <tr>
+                      <td class="tg-us36"><span style="font-weight:bold">Globulina</span></td>
+                      <td class="tg-ey81">Glob</td>
+                      <td class="tg-us36">S<br></td>
+                      <td class="tg-ey81">2</td>
+                      <td class="tg-us36">3.5</td>
+                      <td class="tg-ey81">0</td>
+                      <td class="tg-us36">50</td>
+                      <td class="tg-ey81">g/dL<br></td>
+                      <td class="tg-us36">10</td>
+                      <td class="tg-ey81">g/L<br></td>
+                   </tr>
+                   <tr>
                       <td class="tg-c3ow" colspan="10"><span style="font-weight:bold">Saída</span></td>
                    </tr>
                    <tr>
-                      <td class="tg-us36"><span style="font-weight:bold">Correção do Cálcio</span></td>
-                      <td class="tg-ey81">Ca++_c<br></td>
-                      <td class="tg-us36">S</td>
-                      <td class="tg-ey81">8.5</td>
-                      <td class="tg-us36">10.5</td>
+                      <td class="tg-us36"><span style="font-weight:bold">Proteína Limite</span></td>
+                      <td class="tg-ey81">Ca++_pb<br></td>
+                      <td class="tg-us36"></td>
+                      <td class="tg-ey81">50</td>
+                      <td class="tg-us36">54</td>
                       <td class="tg-ey81">0</td>
-                      <td class="tg-us36">20</td>
-                      <td class="tg-ey81">mg/dL<br></td>
-                      <td class="tg-us36">0.2495</td>
-                      <td class="tg-ey81">mmol/L<br></td>
+                      <td class="tg-us36">100</td>
+                      <td class="tg-ey81">%<br></td>
+                      <td class="tg-us36">0.01</td>
+                      <td class="tg-ey81">fração<br></td>
                    </tr>
                   </table></center>
                   <div><br>
                     Sobre os Parâmetros: Valores normais (e limites) são expressos em Unidades (C). Spcmn = amostra.
-                    CF = fator de conversão. 
+                    CF = fator de conversão.
                     <br>Unidades (C) x CF = Unidades (SI) (a menos que especificado de outra forma).
                   </div>
               </li>
