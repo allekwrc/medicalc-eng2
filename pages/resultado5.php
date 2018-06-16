@@ -3,7 +3,7 @@
 $albumin = $_POST["albumina"];
 $globulina = $_POST["globulina"];
 
-        $resultado = ($albumin*8) + ($globulina*2) +3 ;
+        $resultado = ($albumin*8) + ($globulina*2) +3;
 ?>
 
 
@@ -133,7 +133,9 @@ $globulina = $_POST["globulina"];
                     <div style = "font-weight:bolder">Valor da Globulina: <spam style = "font-weight:normal"><?php echo $globulina; ?> g/dL</spam></div>
 
                     <br>
-                    <div style = "font-weight:bolder">RESULTADO: <spam class="<?php echo $classresult; ?>"><?php echo $resultado; ?> mg/dL</spam></div>
+                    <div style = "font-weight:bolder">RESULTADO: <spam class="<?php echo $classresult; ?>"><?php echo $resultado; ?> %</spam></div>
+                    <br><br>
+                    <spam style="font-size:10px">Cores: <br><spam style="color:green; font-weight:bolder ">VERDE</spam> = valores normais.<br><spam style="color:red; font-weight:bolder">VERMELHO</spam> = valores anormais.</spam>
                 </li>
 
 

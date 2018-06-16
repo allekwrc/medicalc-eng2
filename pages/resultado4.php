@@ -134,10 +134,12 @@ $ph     = $_POST["ph"];
 
                 <li class="list-group-item" style="background-color:#dae8fc;">
                     <div style = "font-weight:bolder">Valor do Cálcio: <spam style = "font-weight:normal"><?php echo $calcio; ?> mg/dL</spam></div><br>
-                    <div style = "font-weight:bolder">Valor da ph: <spam style = "font-weight:normal"><?php echo $ph; ?> pH untis</spam></div>
+                    <div style = "font-weight:bolder">Valor da ph: <spam style = "font-weight:normal"><?php echo $ph; ?> pH unidade</spam></div>
 
                     <br>
                     <div style = "font-weight:bolder">RESULTADO: <spam class="<?php echo $classresult; ?>"><?php echo $resultado; ?> mg/dL</spam></div>
+                    <br><br>
+                    <spam style="font-size:10px">Cores: <br><spam style="color:green; font-weight:bolder ">VERDE</spam> = valores normais.<br><spam style="color:red; font-weight:bolder">VERMELHO</spam> = valores anormais.</spam>
                 </li>
 
 

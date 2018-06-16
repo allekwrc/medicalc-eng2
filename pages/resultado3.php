@@ -112,7 +112,7 @@ $globulina = $_POST["globulina"];
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 style = "text-align:center" class="page-header">Resultado do Cálculo de Correção de Cálcio</h1>
+                    <h1 style = "text-align:center" class="page-header">Resultado do Cálculo de Correção de Globulina</h1>
                 </div>
             </div>
 
@@ -134,10 +134,12 @@ $globulina = $_POST["globulina"];
                 
                 <li class="list-group-item" style="background-color:#dae8fc;">
                     <div style = "font-weight:bolder">Valor do Cálcio: <spam style = "font-weight:normal"><?php echo $calcio; ?> mg/dL</spam></div><br>
-                    <div style = "font-weight:bolder">Valor da Albumina: <spam style = "font-weight:normal"><?php echo $albumina; ?> g/dL</spam></div>
+                    <div style = "font-weight:bolder">Valor da Globulina: <spam style = "font-weight:normal"><?php echo $globulina; ?> g/dL</spam></div>
                                         
                     <br>
                     <div style = "font-weight:bolder">RESULTADO: <spam class="<?php echo $classresult; ?>"><?php echo $resultado; ?> mg/dL</spam></div>
+                    <br><br>
+                    <spam style="font-size:10px">Cores: <br><spam style="color:green; font-weight:bolder ">VERDE</spam> = valores normais.<br><spam style="color:red; font-weight:bolder">VERMELHO</spam> = valores anormais.</spam>
                 </li>
 
 

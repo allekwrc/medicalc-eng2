@@ -138,6 +138,9 @@ $albumina = $_POST["albumina"];
                                         
                     <br>
                     <div style = "font-weight:bolder">RESULTADO: <spam class="<?php echo $classresult; ?>"><?php echo $resultado; ?> mg/dL</spam></div>
+                    
+                    <br><br>
+                    <spam style="font-size:10px">Cores: <br><spam style="color:green; font-weight:bolder ">VERDE</spam> = valores normais.<br><spam style="color:red; font-weight:bolder">VERMELHO</spam> = valores anormais.</spam>
                 </li>
 
 
